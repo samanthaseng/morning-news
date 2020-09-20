@@ -12,7 +12,7 @@ function ScreenArticlesBySource(props) {
 
   useEffect(() => {
     async function loadData(){
-      var rawResponse = await fetch(`http://newsapi.org/v2/top-headlines?sources=${props.match.params.id}&apiKey=9b8f941c03494d18bbea85de09105201`);
+      var rawResponse = await fetch(`https://newsapi.org/v2/top-headlines?sources=${props.match.params.id}&apiKey=9b8f941c03494d18bbea85de09105201`);
       var response = await rawResponse.json();
       setArticleList(response.articles)
     }
