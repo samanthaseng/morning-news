@@ -1,11 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { Redirect} from 'react-router-dom';
-import './App.css';
-import { Card, Icon, Modal } from 'antd';
-import Nav from './Nav'
-
-// Redux
 import {connect} from 'react-redux';
+import { Card, Icon, Modal } from 'antd';
+import './App.css';
+import Nav from './Nav'
 
 const { Meta } = Card;
 
@@ -14,7 +12,6 @@ function ScreenMyArticles(props) {
   const [content, setContent] = useState('');
   const [visible, setVisible] = useState(false);
 
-  // Modal
   var showModal = (title, content) => {
     setVisible(true);
     setTitle(title);
@@ -22,12 +19,10 @@ function ScreenMyArticles(props) {
   };
 
   var handleOk = e => {
-    console.log(e);
     setVisible(false);
   };
 
   var handleCancel = e => {
-    console.log(e);
     setVisible(false);
   };
 

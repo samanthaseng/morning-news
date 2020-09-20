@@ -6,7 +6,6 @@ import ScreenSource from './ScreenSource';
 import ScreenArticlesBySource from './ScreenArticlesBySource';
 import ScreenMyArticles from './ScreenMyArticles';
 
-// Redux
 import wishlist from './reducers/article';
 import token from './reducers/token';
 import {Provider} from 'react-redux';

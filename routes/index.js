@@ -13,8 +13,6 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
-// SIGN IN / SIGN UP =====================
-
 router.post('/sign-up', async function(req, res, next) {
   var salt = uid2(32);
   var result;
@@ -75,8 +73,6 @@ router.post('/sign-in', async function(req, res, next) {
 
   res.json({result, token: userToken, errorMessage})
 })
-
-// WISHLIST =====================
 
 router.post('/wishlist', async function(req, res, next) {
   var searchUser = await userModel.findOne({token: req.body.tokenFromFront});
@@ -139,8 +135,6 @@ router.get('/wishlist', async function(req, res, next) {
   res.json({result, wishlist: wishlist});
 })
 
-// LANGUAGE =====================
-
 router.post('/update-language', async function(req, res, next) {
   var updateUser = await userModel.updateOne(
     {token: req.body.tokenFromFront},
@@ -155,8 +149,6 @@ router.post('/update-language', async function(req, res, next) {
   res.json({result});
 })
 
-// RECUPERATION INFOS UTILISATEUR =====================
-
 router.post('/user-informations', async function(req, res, next) {
   var searchUser = await userModel.findOne({token: req.body.tokenFromFront});
 
@@ -170,7 +162,5 @@ router.post('/user-informations', async function(req, res, next) {
 
   res.json({result, wishlist, language});
 })
-
-
 
 module.exports = router;
