@@ -1,4 +1,4 @@
-require('./models/connection'); // Connexion base de données
+require('./models/connection');
 
 var createError = require('http-errors');
 var express = require('express');
@@ -19,7 +19,6 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-//app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'reactapp/build')));
 
 app.use('/', indexRouter);
