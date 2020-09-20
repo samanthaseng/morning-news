@@ -40,7 +40,7 @@ function ScreenSource(props) {
 
   useEffect(() => {
     async function loadData(){
-      var rawResponse = await fetch(`https://newsapi.org/v2/sources?country=${selectedLanguage}&apiKey=9b8f941c03494d18bbea85de09105201`);
+      var rawResponse = await fetch(`http://newsapi.org/v2/sources?country=${selectedLanguage}&apiKey=9b8f941c03494d18bbea85de09105201`);
       var response = await rawResponse.json();
 	  setSourceList(response.sources);
 	  
